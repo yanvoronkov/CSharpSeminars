@@ -14,5 +14,5 @@ if (a % 2 == 0)
 }
 else
 {
-	Console.WriteLine("Число является нечетным");
+	Console.WriteLine("Число не является четным");
 }
