@@ -2,23 +2,23 @@
 // принимает на вход число (N) и выдаёт таблицу
 // квадратов чисел от 1 до N.
 
-System.Console.WriteLine("Введите число:");
-int number = Convert.ToInt32(Console.ReadLine());
-if (number > 0)
-{
-	Numb(number);
-}
-else
-{
-	System.Console.WriteLine("Введите целое положительное число");
-}
-
 void Numb(int n1)
 {
 	int counter = 1;
 	while (counter <= n1)
 	{
-		Console.WriteLine($"{counter} -> {counter * counter}");
+		Console.WriteLine($"{counter,3} {counter * counter,3}");
 		counter++;
 	}
 }
+
+System.Console.WriteLine("Введите число:");
+int number = Convert.ToInt32(Console.ReadLine());
+
+while (number < 1)
+{
+	System.Console.WriteLine("Введите положительное, целое число");
+	number = Convert.ToInt32(Console.ReadLine());
+}
+
+Numb(number);
