@@ -16,11 +16,11 @@ int c = Convert.ToInt32(Console.ReadLine());
 
 int max = a;
 
-if (b > a)
+if (b > max)
 {
 	max = b;
 }
-if (c > a)
+if (c > max)
 {
 	max = c;
 }
