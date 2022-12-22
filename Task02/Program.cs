@@ -12,14 +12,18 @@ Console.Write("Введите второе число: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 int max;
+int min;
 
 if (a > b)
 {
 	max = a;
+	min = b;
 }
 else
 {
 	max = b;
+	min = a;
 }
 
-Console.Write($"max = {max}");
+Console.WriteLine($"Большее число: {max}");
+Console.Write($"Меньшее число: {min}");
