@@ -24,4 +24,4 @@ int SumNumbers(int num) //num = number
 	return sum;
 }
 
-Console.WriteLine(sumNumbers);
+Console.WriteLine($"Сумма чисел от 1 до {number} = {sumNumbers}");
