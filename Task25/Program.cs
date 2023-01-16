@@ -5,4 +5,5 @@
 // 2, 4 -> 16
 
 System.Console.WriteLine("Введите число:");
-int number = Convert.ToInt32(Console.ReadLine());
+int numberA = Convert.ToInt32(Console.ReadLine());
+
