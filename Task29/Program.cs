@@ -24,7 +24,7 @@ int InsertDigit(string text) //Метод пользовательского в�
 	return result;
 }
 
-int[] CreateArray(int len, int min, int max)
+int[] CreateArray(int len, int min, int max)//метод создания массива из псевдочисел
 {
 	int[] array = new int[len];
 	Random rnd = new Random();
