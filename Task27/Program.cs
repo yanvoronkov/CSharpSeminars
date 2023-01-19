@@ -6,21 +6,24 @@
 // 82 -> 10
 // 9012 -> 12
 
-// int InsertNumber(string text) //Метод пользовательского ввода числа
-// {
-// 	System.Console.WriteLine(text);
-// 	int result = Convert.ToInt32(Console.ReadLine());
-// 	return result;
-// }
+int number = InsertNumber("Ввдите число:");
+int sumDigits = SumDigits(number);
+Console.WriteLine($"{number} -> {sumDigits}");
 
-// int SumDigits(int num)
-// {}
-int num = 452;
-int sum = 0;
-while (num > 0)
+int InsertNumber(string text) //Метод пользовательского ввода числа
 {
-	sum = sum + num % 10;
-	num = num / 10;
+	System.Console.WriteLine(text);
+	int result = Convert.ToInt32(Console.ReadLine());
+	return result;
 }
 
-Console.WriteLine(sum);
+int SumDigits(int num) //Метод, возвращающий сумму цифр в числе
+{
+	int sum = 0;
+	while (num > 0)
+	{
+		sum = sum + num % 10;
+		num = num / 10;
+	}
+	return sum;
+}
