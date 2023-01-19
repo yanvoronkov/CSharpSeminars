@@ -21,4 +21,5 @@ string DecToBin(int num)
 	return result;
 }
 
-Console.WriteLine(DecToBin(13));
+int number = InsertDigit("Введите число: ");
+Console.WriteLine(DecToBin(number));
