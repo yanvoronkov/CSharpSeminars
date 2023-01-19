@@ -23,3 +23,18 @@ string DecToBin(int num)
 
 int number = InsertDigit("Введите число: ");
 Console.WriteLine(DecToBin(number));
+
+// Решение 2 через int
+
+// int ParseIn2(int num)
+// {
+//     if (num == 0) return 0;
+//     int result = num % 2;
+//     num /= 2;
+//     result += ParseIn2(num) * 10;
+//     return result;
+// }
+// //Console.WriteLine(ParseIn2(Convert.ToInt32(Console.ReadLine())));
+// Console.WriteLine("Введите чило");
+// var num =Console.ReadLine();
+// Console.WriteLine(ParseIn2(Convert.ToInt32(num)));
