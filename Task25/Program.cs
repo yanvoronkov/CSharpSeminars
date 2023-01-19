@@ -1,10 +1,16 @@
 ﻿// Задача 25: Напишите цикл,
-//  который принимает на вход два числа (A и B)
-//  возводит число A в натуральную степень B.
+//1. который принимает на вход два числа (A и B)
+//2. возводит число A в натуральную степень B.
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-int ExponentNum(int num, int exp)
+int InsertDigit(string text) //Метод пользовательского ввода числа
+{
+	System.Console.WriteLine(text);
+	int result = Convert.ToInt32(Console.ReadLine());
+	return result;
+}
+int ExponentNum(int num, int exp) //метод вычисления степени числа путем перемножения числа на себя в цикле
 {
 	int result = 1;
 	for (int i = 0; i < exp; i++)
@@ -15,10 +21,8 @@ int ExponentNum(int num, int exp)
 	return result;
 }
 
-System.Console.WriteLine("Введите число:");
-int a = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Введите степень числа:");
-int b = Convert.ToInt32(Console.ReadLine());
+int numA = InsertDigit("Введите число A:");
+int numB = InsertDigit("Введите число B:");
+int exponentNum = ExponentNum(numA, numB);
 
-int exponentNum = ExponentNum(a, b);
-Console.WriteLine($"{a}, {b} -> {exponentNum}");
+Console.WriteLine($"{numA}, {numB} -> {exponentNum}");
