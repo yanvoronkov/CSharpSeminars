@@ -2,11 +2,21 @@
 // копию заданного массива с помощью поэлементного
 // копирования.
 
-int[] arr1 = CreateArrayRndInt(7, 1, 9);
+int length = InsertDigit("Введите размер массива");
+int min = InsertDigit("Введите минимально допустимое значение диапазона");
+int max = InsertDigit("Введите максимально допустимое значение диапазона");
+
+int[] arr1 = CreateArrayRndInt(length, min, max);
 int[] arr2 = CopyArray(arr1);
 PrintArray(arr1);
 PrintArray(arr2);
 
+int InsertDigit(string text) //Метод пользовательского ввода числа
+{
+	System.Console.WriteLine(text);
+	int result = Convert.ToInt32(Console.ReadLine());
+	return result;
+}
 // Создание рандомного массива int
 int[] CreateArrayRndInt(int size, int min, int max)
 {
