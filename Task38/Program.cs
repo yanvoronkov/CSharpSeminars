@@ -57,3 +57,17 @@ double FindMaxMinNumbers(double[] array)
 	double diffMaxMin = max - min;
 	return diffMaxMin;
 }
+
+//пользовательский ввод массива в строку через запятую
+int[] GetUserNumbers()
+{
+	Console.Write("Введите числа через запятую: ");
+	string str = Console.ReadLine();
+	string[] strArr = str.Split(',');
+	int[] result = new int[strArr.Length];
+	for (int i = 0; i < strArr.Length; i++)
+	{
+		result[i] = Convert.ToInt32(strArr[i]);
+	}
+	return result;
+}
