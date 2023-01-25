@@ -5,10 +5,9 @@
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 //1. Метод ввода пользователем значений
-//2. Метод проверки условия на паралельность или слияние
+//2. Проверка на паралельность или слияние
 //3. Метод вычисления координаты x, y (x = (b1 - b2)/(k2 - k1))
 //4. Вывод на печать результата по образцу, как в примере
-
 
 
 double b1 = InsertDigit("Введите значение b1: ");
@@ -16,6 +15,7 @@ double k1 = InsertDigit("Введите значение k1: ");
 double b2 = InsertDigit("Введите значение b2: ");
 double k2 = InsertDigit("Введите значение k2: ");
 
+//проверка на параллельность/слияние прямых, вывод введенных данных и значений x, y с округлением до двух знаков
 if (k1 == k2)
 {
 	Console.WriteLine("Точки пересечения нет, так как прямые параллельны");
@@ -27,9 +27,7 @@ else
 	Console.WriteLine($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x}; {y}))");
 }
 
-
 //метод пользовательского ввода числа
-
 double InsertDigit(string text)
 {
 	System.Console.WriteLine(text);
@@ -37,14 +35,14 @@ double InsertDigit(string text)
 	return result;
 }
 
-
-//Метод вычисления координаты x
+//Метод вычисления координаты x пересечения двух прямых
 double CheckIntersectionOfTwoLineSegmentsX(double b1, double k1, double b2, double k2)
 {
 	double x = (b1 - b2) / (k2 - k1);
 	return x;
 }
-//Метод вычисления координаты x
+
+//Метод вычисления координаты y пересечения двух прямых
 double CheckIntersectionOfTwoLineSegmentsY(double b1, double k1, double b2, double k2)
 {
 	double y = k1 * ((b1 - b2) / (k2 - k1)) + b1;
