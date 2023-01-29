@@ -33,7 +33,7 @@ void PrintMatrix(int[,] matrix)
 
 int[] CreateArrayFromMatrix(int[,] matr)
 {
-	int[] arr = new int[matr.GetLength(0) * matr.GetLength(1)];
+	int[] arr = new int[matr.Length];//[matr.Length] количество элементов двумерного массива
 	int count = 0;
 	for (int i = 0; i < matr.GetLength(0); i++)
 	{
