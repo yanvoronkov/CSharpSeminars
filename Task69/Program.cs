@@ -8,8 +8,9 @@ int a = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter natural number: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
-int pow = PowerNumbers(a, b);
-System.Console.WriteLine($"Power = {pow}");
+int pow = PowerNumbers(a, Math.Abs(b));
+System.Console.WriteLine(b > 0 ? $"Power = {pow}" : $"Power = 1/{pow}");
+
 
 int PowerNumbers(int num, int power)
 {
