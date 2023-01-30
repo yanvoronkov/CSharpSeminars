@@ -37,8 +37,6 @@ void PrintMatrix(int[,] matrix)
 	}
 }
 
-
-
 double[] AverageOfColumnsElements(int[,] matr)
 {
 	double[] averageArray = new double[matr.GetLength(1)];
@@ -49,7 +47,7 @@ double[] AverageOfColumnsElements(int[,] matr)
 		{
 			sumElementsColumns = sumElementsColumns + matr[j, i];
 		}
-		averageArray[i] = Math.Round(sumElementsColumns / matr.GetLength(0), 1, MidpointRounding.ToZero);
+		averageArray[i] = Math.Round(sumElementsColumns / matr.GetLength(0), 1, MidpointRounding.AwayFromZero);
 		sumElementsColumns = 0;
 	}
 	return averageArray;
