@@ -9,7 +9,7 @@
 
 // 8 7,8 -7,1 9
 
-double[,] matr = CreateMatrixRndInt(3, 4, 1, 5);
+double[,] matr = CreateMatrixRndInt(3, 4, -9, 9);
 PrintMatrix(matr);
 
 //метод создания двумерного массива из псевдочисел
@@ -21,7 +21,7 @@ double[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 	{
 		for (int j = 0; j < matrix.GetLength(1); j++)
 		{
-			matrix[i, j] = rnd.Next(min, max + 1) + Math.Round(rnd.NextDouble(), 2, MidpointRounding.ToZero);
+			matrix[i, j] = Math.Round((rnd.Next(min, max + 1) + rnd.NextDouble()), 2, MidpointRounding.AwayFromZero);
 		}
 	}
 	return matrix;
