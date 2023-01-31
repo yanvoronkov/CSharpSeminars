@@ -1,13 +1,13 @@
-﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
-// и возвращает значение этого элемента или же указание, что такого элемента нет.
+﻿// // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+// // и возвращает значение этого элемента или же указание, что такого элемента нет.
 
-// Например, задан массив:
+// // Например, задан массив:
 
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
 
-// 1, 7 -> такого элемента в массиве нет
+// // 1, 7 -> такого элемента в массиве нет
 
 //метод создания двумерного массива из псевдочисел
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -39,23 +39,33 @@ void PrintMatrix(int[,] matrix)
 	}
 }
 
-//метод пользовательского ввода числа
-int InsertDigit(string text)
+int InsertDigit(string text) //Метод пользовательского ввода для целых чисел
 {
-	System.Console.WriteLine(text);
-	int result = Convert.ToInt32(Console.ReadLine());
+	int result; bool parse;
+	Console.WriteLine(text);
+	parse = Int32.TryParse(Console.ReadLine(), out result);
+	if (!parse) result = InsertDigit(text);//Если пользователь ввел некорректное значение вызываем повтороно метод.
 	return result;
 }
 
 int[,] array2D = CreateMatrixRndInt(4, 5, 10, 99);
 PrintMatrix(array2D);
 int rowIndex = InsertDigit("Введите индекс строки массива: ");
+if (rowIndex < 0)
+{
+	rowIndex = InsertDigit("Введите целое положительное число: ");
+}
+
 int сolumnIndex = InsertDigit("Введите индекс столбца массива: ");
+if (сolumnIndex < 0)
+{
+	сolumnIndex = InsertDigit("Введите целое положительное число: ");
+}
 
 if (rowIndex <= array2D.GetLength(0) && сolumnIndex <= array2D.GetLength(1))
 {
 	int arrayItem = array2D[rowIndex, сolumnIndex];
-	Console.WriteLine($"Искомое значение -> {arrayItem}");
+	Console.WriteLine($"Искомое значение c индексами {rowIndex}, {сolumnIndex} -> {arrayItem}");
 }
 else
 {
