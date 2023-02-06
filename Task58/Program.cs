@@ -1,10 +1,10 @@
-﻿// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-// Например, даны 2 матрицы:
-// 2 4 | 3 4
-// 3 2 | 3 3
-// Результирующая матрица будет:
-// 18 20
-// 15 18
+﻿// // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// // Например, даны 2 матрицы:
+// // 2 4 | 3 4
+// // 3 2 | 3 3
+// // Результирующая матрица будет:
+// // 18 20
+// // 15 18
 
 //метод создания двумерного массива из псевдочисел
 
@@ -41,17 +41,14 @@ void PrintMatrix(int[,] matrix)
 int[,] ProductOfTwoMatrix(int[,] matrixA, int[,] matrixB)
 {
 	int[,] resultMatrix = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
-	int tempSum = 0;
 	for (int i = 0; i < resultMatrix.GetLength(0); i++)
 	{
 		for (int j = 0; j < resultMatrix.GetLength(1); j++)
 		{
 			for (int n = 0; n < matrixA.GetLength(1); n++)
 			{
-				tempSum = tempSum + matrixA[i, n] * matrixB[n, j];
+				resultMatrix[i, j] += matrixA[i, n] * matrixB[n, j];
 			}
-			resultMatrix[i, j] = tempSum;
-			tempSum = 0;
 		}
 	}
 	return resultMatrix;
@@ -75,3 +72,51 @@ else
 {
 	Console.WriteLine("Перемножение массивов невозможно!");
 }
+
+// using System;
+
+// namespace ArrayProduct
+// {
+// 	class Program
+// 	{
+// 		static void Main(string[] args)
+// 		{
+// 			int[,] array1 = new int[,] { { 1, 2 }, { 3, 4 } };
+// 			int[,] array2 = new int[,] { { 2, 0 }, { 1, 2 } };
+
+// 			int[,] product = MultiplyArrays(array1, array2);
+
+// 			Console.WriteLine("Product of the arrays:");
+// 			for (int i = 0; i < product.GetLength(0); i++)
+// 			{
+// 				for (int j = 0; j < product.GetLength(1); j++)
+// 				{
+// 					Console.Write(product[i, j] + " ");
+// 				}
+// 				Console.WriteLine();
+// 			}
+// 		}
+
+// 		static int[,] MultiplyArrays(int[,] a, int[,] b)
+// 		{
+// 			int rows = a.GetLength(0);
+// 			int columns = b.GetLength(1);
+// 			int common = a.GetLength(1);
+
+// 			int[,] result = new int[rows, columns];
+
+// 			for (int i = 0; i < rows; i++)
+// 			{
+// 				for (int j = 0; j < columns; j++)
+// 				{
+// 					for (int k = 0; k < common; k++)
+// 					{
+// 						result[i, j] += a[i, k] * b[k, j];
+// 					}
+// 				}
+// 			}
+
+// 			return result;
+// 		}
+// 	}
+// }
