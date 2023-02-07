@@ -18,13 +18,17 @@ string OutputDigits(int n)
 	if (n < 0)
 	{
 		if (n == 0) return String.Empty;
+		if (n == -1) return $"{n}\"";
 		else return $"{n}, " + OutputDigits(n + 1);
 	}
 	else
+	{
 		if (n == 0) return String.Empty;
-	else return $"{n}, " + OutputDigits(n - 1);
+		if (n == 1) return $"{n}\"";
+		else return $"{n}, " + OutputDigits(n - 1);
+	}
 }
 
 int num = InsertDigit("Введите число");
-Console.Write($"N = {num} -> ");
+Console.Write($"N = {num} -> \"");
 Console.WriteLine(OutputDigits(num));
