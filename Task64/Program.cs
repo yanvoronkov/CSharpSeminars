@@ -25,8 +25,6 @@ string OutputDigits(int n)
 	else return $"{n}, " + OutputDigits(n - 1);
 }
 
-
 int num = InsertDigit("Введите число");
 Console.Write($"N = {num} -> ");
 Console.WriteLine(OutputDigits(num));
-
