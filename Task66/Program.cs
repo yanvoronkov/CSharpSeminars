@@ -5,14 +5,20 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.Write("Enter natural number M: ");
-int m = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Enter natural number N: ");
-int n = Convert.ToInt32(Console.ReadLine());
+int m = InsertDigit("Enter natural number m: ");
+int n = InsertDigit("Enter natural number n: ");
 
 int sumNumbers = SumNumbers(m, n);
 Console.WriteLine($"M = {m}; N = {n} -> {sumNumbers}");
+
+int InsertDigit(string text) //Метод пользовательского ввода для целых чисел
+{
+	int result; bool parse;
+	Console.WriteLine(text);
+	parse = Int32.TryParse(Console.ReadLine(), out result);
+	if (!parse) result = InsertDigit(text); //Если пользователь ввел некорректное значение вызываем повтороно метод.
+	return result;
+}
 
 int SumNumbers(int numM, int numN)
 {
